@@ -1,0 +1,27 @@
+.pro{
+    align: center;
+}
+.itemgrid{
+    margin:auto;
+        max-width: 60rem;
+        flex-wrap: wrap;
+        display: flex;
+}
+.fig{
+    border: 3px solid #d3d3d3d3;
+    flex-basis:calc(33.33% - 4rem) ;
+    padding: 2.5rem;
+    left:50rem;
+    flex-grow: 1;
+    margin:0,2rem,2rem,2rem;
+}
+.img{
+    width: 100%;
+}
+.pa{
+    font-size: 20px;
+    align-self: center;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+
+}

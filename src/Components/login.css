@@ -1,0 +1,10 @@
+.form{
+    margin: auto;
+    width: 200px;
+    min-width: 200px; /* Ensure a minimum width of 200px */
+    max-width: 300px; /* Limit the maximum width to 300px */
+    margin: 0 auto; /* Center the container horizontally */
+    background-color: black; /* Set the background to transparent */
+    filter: blur(5px); /* Apply a blur effect to the background */
+    padding: 20px; /* Add some padding for content */
+}

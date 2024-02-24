@@ -1,0 +1,39 @@
+.foot-container{
+    max-width:1140px;
+    margin:auto;
+    display: flex;
+
+
+
+}
+.footer{
+    background: #12c2e9;  
+    background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);  
+    background: linear-gradient(to right, #0ad918, #b7de0a, #487c87);
+    }
+.left{
+    height: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left:10px;
+}
+.right{
+    height: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left:450px;
+}
+.location{
+   display: flex;
+    
+}
+.add{
+    top:0%;
+    left:10px;
+}
+.location p{
+    line-height: 30px;
+
+}
