@@ -1,3 +1,40 @@
-.a{
-    background:black;
-  }
+/* home.css */
+
+.navbar {
+  background-color: #2d545e; /* Night Blue */
+  color: #fff;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(18, 52, 59, 0.5); /* Night Blue Shadow */
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.welcome-container {
+  display: flex;
+  align-items: center;
+}
+
+.welcome-text {
+  margin-right: 10px;
+  font-size: 20px;
+  color: #ffd700; /* vibrant yellow */
+}
+
+.nav-buttons button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.nav-buttons button:hover {
+  background-color: #0056b3;
+}

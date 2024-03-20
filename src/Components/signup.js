@@ -1,18 +1,19 @@
-// SignupForm.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import './sign.css'; // Import your CSS file for styling
+
 const SignupForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [Login,succeslogin]=useState(false);
+  const [success, setSuccess] = useState(false);
+  const history = useNavigate();
+
   const handleSignup = async () => {
     try {
       const response = await axios.post('http://localhost:8000/signup', { email, password });
-      console.log(response.data);
-      console.log(response.status);
-      if(response.status==201){
-        succeslogin(true)
+      if (response.status === 201) {
+        setSuccess(true);
       }
     } catch (error) {
       console.error(error);
@@ -20,21 +21,27 @@ const SignupForm = () => {
   };
 
   return (
-    <div>
-      <h2>Signup</h2>
-      <div>
-        <label>Email:</label>
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+    <div className='signup-container'>
+      <div className='signup-form'>
+        <h2>Signup</h2>
+        <div className='form-group'>
+          <label htmlFor='email'>Email:</label>
+          <input type='email' id='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='password'>Password:</label>
+          <input type='password' id='password' value={password} onChange={(e) => setPassword(e.target.value)} />
+        </div>
+        <button className='signup-button' onClick={handleSignup}>Signup</button>
+        {success && (
+          <>
+            <p>You have successfully signed up. You can now login.</p>
+            <Link to="/" className='login-link'>Login</Link>
+          </>
+        )}
       </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      </div>
-      <button onClick={handleSignup}>Signup</button>
-      {Login && <p>You have successfully signed up. You can now login.</p> && <Link to="/" >Login</Link>}
     </div>
   );
 };
 
 export default SignupForm;
-

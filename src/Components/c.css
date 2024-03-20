@@ -1,0 +1,20 @@
+.curved-screen {
+    width: 50%; /* Adjust the width as needed */
+    height: 4px; /* Adjust the height as needed */
+    border-top-left-radius: 50% 20px; /* Curved top left corner */
+    border-top-right-radius: 50% 20px; /* Curved top right corner */
+    border-bottom-left-radius: 50% 20px; /* Curved bottom left corner */
+    border-bottom-right-radius: 50% 20px; /* Curved bottom right corner */
+    background-color: #e0e0e0; /* Adjust the background color as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .curved-screen h1, .curved-screen p {
+    text-align: center;
+    margin: 10px;
+  }
+  

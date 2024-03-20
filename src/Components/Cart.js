@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
-
+import './Cart.css'
 const Cart = () => {
   const location = useLocation();
   const { data } = location.state || {};
   const [userCart, setUserCart] = useState(null);
-  const [totalAmount, setTotalAmount] = useState(0);
 
   const fetchUserCart = async () => {
     try {
@@ -27,16 +26,7 @@ const Cart = () => {
     };
   }, [data]);
 
-  useEffect(() => {
-    if (userCart) {
-      // Calculate total amount
-      let total = 0;
-      userCart.forEach(item => {
-        total += Number(item.rate);
-      });
-      setTotalAmount(total);
-    }
-  }, [userCart]);
+ 
 
   const handleDeleteProduct = async (productId) => {
     try {
@@ -49,24 +39,24 @@ const Cart = () => {
 
   return (
     <div>
-      <h2>User Cart</h2>
+      <h2>Watch later</h2>
       {userCart ? (
         <>
           <table>
             <thead>
               <tr>
-                <th>Product Name</th>
-                <th>Product Image</th>
-                <th>Product Description</th>
-                <th>Rate</th>
+                <th>MovieName</th>
+                <th>Movie Image</th>
+                <th>Movie language</th>
+                <th>Rating</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
               {userCart.map((item, index) => (
                 <tr key={index}>
-                  <td>{item.productName}</td>
-                  <td><img src={item.productImagelink} alt={item.productName} /></td>
+                  <td>{item.title}</td>
+                  <td><img src={item.productImagelink} alt={item.name} /></td>
                   <td>{item.productDescription}</td>
                   <td>{item.rate}</td>
                   <td>
@@ -77,7 +67,7 @@ const Cart = () => {
             </tbody>
           </table>
           <div>
-            <p>Total: {totalAmount}</p>
+           
           </div>
         </>
       ) : (

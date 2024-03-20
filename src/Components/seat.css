@@ -1,0 +1,38 @@
+/* Seat grid container */
+.seat-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Seat row */
+.seat-row {
+  display: flex;
+  justify-content: center;
+}
+
+/* Individual seat button */
+.seat {
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+/* Available seat */
+.seat.available {
+  background-color: #4caf50; /* Green */
+}
+
+/* Unavailable seat */
+.seat.unavailable {
+  background-color: #f44336; /* Red */
+}
+
+.selected {
+  background-color: yellow;
+  /* Add any other styling you want for selected seats */
+}
+

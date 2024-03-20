@@ -4,7 +4,8 @@ import Home from './Home';
 import Login from './login';
 import SignupForm from './signup';
 import Cart from './Cart';
-import Upload from './upload'
+import Shows from './Shows';
+import Seats from './Seats'
 function Main() {
   return (
     
@@ -14,10 +15,10 @@ function Main() {
        <Route path="/home" element={<Home />} /> 
        <Route path="/home/cart" element={<Cart />} /> 
        <Route path="/signup" element={<SignupForm />} />
-       <Route path='/home/upload' element={<Upload />} />
+       <Route path="/shows/:movieId" element={<Shows/>} />
+       <Route path='/seats/:tid' element={<Seats/>} />
        </Routes>
        </Router>
-  
   );
 }
 
